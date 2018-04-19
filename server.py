@@ -4,7 +4,7 @@ import string,cgi,time
 from os import curdir, sep
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 
-port_number = 8009
+port_number = 8008
 
 class MyHandler(BaseHTTPRequestHandler):
     outputname = "exceptions.xml"

@@ -16,10 +16,13 @@ SERVER_RUN_DURATION=30 #seconds
 SHAREPOINT_DELAY=3 #seconds to wait for the sharepoint call to complete
  this is probably redundant since the curl call should have to finish
  before control is returned to the script. Belt and suspenders?
+USERNAME="user.name@domain.tld"
+  You probably want to export the password for this account as an environmental
+  variable rather than hardcode it here. How you do that is up to you
 
 ## server.py
 
 Set the following variables
 
 port_number = 8009
-outputname = "exceptions.xml"
+outputname = "somefilename.xml"
