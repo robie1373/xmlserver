@@ -6,6 +6,9 @@ Bundled cron script designed to start it, run it for some time and then kill and
 ## Notes
 You could run a copy of the service on multiple ports by changing port # and the outputname in these files.
 
+# Requirements
+This requires xmljson. It can be installed with pip install xmljson.
+
 ## cronjob.sh
 Set the following variables
 

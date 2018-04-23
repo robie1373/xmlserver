@@ -3,6 +3,8 @@
 import string,cgi,time
 from os import curdir, sep
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
+from xmljson import badgerfish as bf
+from json import dumps
 
 port_number = 8008
 
@@ -13,11 +15,14 @@ class MyHandler(BaseHTTPRequestHandler):
         try:
             if self.path.endswith(self.outputname):
                 f = open(curdir + sep + self.outputname)
+                f_xml = f.read()
+                f_objects = bf.data(f_xml)
+                f_json = dumps(f_objects)
 
                 self.send_response(200)
                 self.send_header('Content-type',    'text/xml')
                 self.end_headers()
-                self.wfile.write(f.read())
+                self.wfile.write(f_json)
                 f.close()
                 return
 
